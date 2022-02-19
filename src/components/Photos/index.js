@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {useEffect, useContext} from 'react';
+import NasaContext from '../../context/Nasa/NasaContext';
+
 
 export default function Photos() {
-    async function sendApiRequest(){
-        let Api_key = 'vSzasUGIBx0Y5AkvqtGmhvsdmqMfLnUeLjHMSf5u';
-        let response = await fetch (`https://api.nasa.gov/planetary/apod?api_key=${Api_key}`);
-        console.log(response)
-        let data = await response.json()
-        console.log(data)
-        return data
-    }
+
+    const ctxNasa = useContext(NasaContext)
+    const {getPhotoDay} = ctxNasa
+    useEffect(()=>{
+        getPhotoDay()
+    },[])
+    console.log(ctxNasa)
     return (
         <>
         <br/>
@@ -19,11 +20,11 @@ export default function Photos() {
         <div class="container">
             <div>
                 <br/>
-                <h3>title</h3>
-                <p>description</p>
-                <p>date</p>
+                <h3>{ctxNasa.photoDay.title}</h3>
+                <p>{ctxNasa.photoDay.explanation}</p>
+                <p>{ctxNasa.photoDay.date}</p>
             </div>
-            <div>Image</div>
+            <div><img src={ctxNasa.photoDay.url}/></div>
         </div>
     </>
     );

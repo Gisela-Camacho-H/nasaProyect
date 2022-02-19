@@ -15,6 +15,7 @@ import CommentState from './context/Comment/CommentState';
 import Signup from './components/Auth/Signup';
 import Signin from './components/Auth/Signin';
 import UserState from './context/User/UserState';
+import NasaState from './context/Nasa/NasaState'
 
 // 2. FUNCIÓN
 function App() {
@@ -22,7 +23,7 @@ function App() {
 
     <>
       <UserState>
-        <CommentState>
+        <NasaState>
           <BrowserRouter>
             {/* Establecer la lista de rutas */}
             <Routes>
@@ -59,7 +60,7 @@ function App() {
 
             </Routes>
           </BrowserRouter>
-        </CommentState>
+          </NasaState>
       </UserState>
     </>
   )
