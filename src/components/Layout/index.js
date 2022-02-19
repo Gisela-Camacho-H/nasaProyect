@@ -26,10 +26,10 @@ export default function Layout() {
 					<li><Link to="/photos">Photos</Link></li>
 					<li><Link to="/mars">Mars</Link></li>
 					<li><Link to="/solarsystem">Solar System</Link></li>
-					<li><Link to="/blog">Blog</Link></li>
 					<li><Link to="/game">Game</Link></li>
 					<li><Link to="/login">Sign In</Link></li>
 					<li><Link to="/signup">Sign Up</Link></li>
+                    <li><Link to="/blog">Blog</Link></li>
 				</ul>
 			</nav>
             </div>

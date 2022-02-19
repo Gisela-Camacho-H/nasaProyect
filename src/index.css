@@ -93,9 +93,12 @@ td:nth-child(1),
 td:nth-child(2) {
   border-right: 2px solid purple;
 }
-h1{
+h1,h2{
   text-align: center;
   color: purple;
+}
+textarea{
+  margin: 30px;
 }
 #description{
   text-align: justify;
@@ -113,6 +116,18 @@ h1{
   display:flex;
   justify-content: space-around;
   margin: 10px;
+}
+#commentForm{
+  margin-left:30%;
+}
+.titleBlog{
+  width: 50%
+}
+.descriptionBlog{
+  width: 60%;
+}
+.createBlog{
+  width: 35%
 }
 .formCreate{
   background-color: rgba(251, 253, 255, 0.4);
@@ -145,11 +160,10 @@ h1{
   width:550px;
   margin-left: 400px;
 }
-
 .logoimg{
   border-radius: 20px;
-  margin: 20px;
-  width: 100px;
+  margin: 15px 0px 15px 25px;
+  width: 150px;
 }
 .picOfDay, .mars{
   text-align: center;
