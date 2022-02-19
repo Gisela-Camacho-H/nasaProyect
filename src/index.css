@@ -104,6 +104,7 @@ textarea{
   text-align: justify;
   margin: 10px;
   padding: 40px;
+  font-size: 15px;
 }
 #date{
   text-align: right;
@@ -231,4 +232,8 @@ textarea{
   border: 3px purple solid;
   margin: 5px 0px 5px 35%;
   width: 30%;
+}
+.imagePhotoDay{
+  width: 350px;
+  margin-right: 20px;
 }

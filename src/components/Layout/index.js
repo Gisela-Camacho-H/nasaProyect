@@ -17,7 +17,7 @@ export default function Layout() {
 		<header>
 		<div className="header">
             <div className="logo">
-                <img className="logoimg" src={logo}/>
+                <img className="logoimg" src={logo} alt="logo"/>
             </div>
             <div className="nav">
 			<nav className="navbar">

@@ -23,6 +23,7 @@ function App() {
 
     <>
       <UserState>
+        <CommentState>
         <NasaState>
           <BrowserRouter>
             {/* Establecer la lista de rutas */}
@@ -61,6 +62,7 @@ function App() {
             </Routes>
           </BrowserRouter>
           </NasaState>
+          </CommentState>
       </UserState>
     </>
   )

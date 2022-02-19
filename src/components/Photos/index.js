@@ -17,14 +17,14 @@ export default function Photos() {
             <h1>Picture of the day</h1>
         </div>
             <br/>
-        <div class="container">
+        <div className="container">
             <div>
                 <br/>
-                <h3>{ctxNasa.photoDay.title}</h3>
-                <p>{ctxNasa.photoDay.explanation}</p>
-                <p>{ctxNasa.photoDay.date}</p>
+                <h3 id="title">{ctxNasa.photoDay.title}</h3>
+                <p id="description">{ctxNasa.photoDay.explanation}</p>
+                <p id="date">{ctxNasa.photoDay.date}</p>
             </div>
-            <div><img src={ctxNasa.photoDay.url}/></div>
+            <div><img className="imagePhotoDay" src={ctxNasa.photoDay.url} alt="Nasa"/></div>
         </div>
     </>
     );
