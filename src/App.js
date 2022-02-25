@@ -9,7 +9,6 @@ import Photos from './components/Photos';
 import Mars from './components/Mars';
 import Blog from './components/Blog';
 import SolarSystem from './components/SolarSystem';
-import Game from './components/Game';
 import Layout from './components/Layout';
 import CommentState from './context/Comment/CommentState';
 import Signup from './components/Auth/Signup';
@@ -50,9 +49,6 @@ function App() {
 
                 {/* localhost:3000/signup */}
                 <Route path="/blog" element={<Blog />} />
-
-                {/* localhost:3000/signup */}
-                <Route path="/game" element={<Game />} />
 
                 {/* localhost:3000/login */}
                 <Route path="/login" element={<Signin />} />

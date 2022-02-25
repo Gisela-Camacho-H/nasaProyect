@@ -30,8 +30,8 @@ footer{
 li a{
   text-decoration: none;
   color: rgb(243, 239, 245);
-  font-size: 3.5vh;
-  margin-left: .3vh;
+  font-size: 4.3vh;
+  margin-left: 2vh;
   text-align: center;
 }
 main p{
@@ -79,20 +79,6 @@ label{
   font-size: 30px;
   margin-left: 50px;
 }
-table,
-th,
-td {
-  height: 110px;
-  width: 400px;
-  font-size: 50px;
-  text-align: center;
-  margin: auto;
-  background-color: rgb(250, 222, 250);
-}
-td:nth-child(1),
-td:nth-child(2) {
-  border-right: 2px solid purple;
-}
 h1,h2{
   text-align: center;
   color: purple;
@@ -102,13 +88,13 @@ textarea{
 }
 #description{
   text-align: justify;
-  margin: 10px;
+  margin: 20px;
   padding: 40px;
   font-size: 15px;
 }
 #date{
   text-align: right;
-  margin: 10px;
+  margin: 30px;
 }
 #title{
   text-align: center;
@@ -126,6 +112,11 @@ textarea{
 }
 .descriptionBlog{
   width: 60%;
+}
+.titlePage{
+  text-align: center;
+  color:#532a70;
+  background-color: rgb(229, 200, 244);
 }
 .createBlog{
   width: 35%
@@ -166,11 +157,6 @@ textarea{
   margin: 15px 0px 15px 25px;
   width: 150px;
 }
-.picOfDay, .mars{
-  text-align: center;
-  color:#532a70;
-  background-color: rgb(229, 200, 244);
-}
 .header{
   display:flex;
 }
@@ -200,7 +186,8 @@ textarea{
   display: flex;
 }
 .nav{
-  margin: 20px;
+  margin-left: 20px;
+  margin-top: 5%;
 }
 .container{
   display:flex;
@@ -235,5 +222,30 @@ textarea{
 }
 .imagePhotoDay{
   width: 350px;
-  margin-right: 20px;
+  margin-right: 40px;
+}
+.dateMars{
+  font-size: 20px;
+}
+.photoMars{
+  width: 300px;
+  height: 300px;
+  margin-right: 40px;
+}
+.CommentDescription{
+  color: purple;
+  text-align: left;
+  padding: 15px;
+  font-size: 15px;
+}
+.CommentTitle{
+  Color: purple;
+  margin-left: 5%;
+}
+.comment{
+  background-color: aliceblue;
+  width: 40%;
+  height: 100px;
+  border-radius: 15px;
+  margin: 20px 0px 10px 10%
 }

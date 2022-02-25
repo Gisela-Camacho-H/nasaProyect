@@ -4,7 +4,9 @@ export default function Signin() {
 	return (
 		<>
 		<br/>
-		<h1>Sign In</h1>
+		<div className="titlePage">
+            <h1>Sign In</h1>
+        </div>
 		<br/>
 		<div className="formCreate1">
 			<br/>

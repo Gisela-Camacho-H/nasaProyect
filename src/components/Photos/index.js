@@ -10,10 +10,11 @@ export default function Photos() {
         getPhotoDay()
     },[])
     console.log(ctxNasa)
+
     return (
         <>
         <br/>
-        <div className="picOfDay">
+        <div className="titlePage">
             <h1>Picture of the day</h1>
         </div>
             <br/>

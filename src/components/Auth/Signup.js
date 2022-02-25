@@ -1,7 +1,6 @@
 // ./components/Auth/Signup.js
 
 import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
 import UserContext from '../../context/User/UserContext'
 
 export default function Signup() {
@@ -41,20 +40,24 @@ export default function Signup() {
 	return (
 		<>
 			<br/>
-			<h1>Create an Account</h1>
+			<div className="titlePage">
+            <h1>Create an Account</h1>
+        </div>
+			<form onSubmit={(evt) => { handleSubmit(evt) }}>
 			<br/>
             <div className="formCreate">
 			<br/>
-            <input type="text" name="name" placeholder="User Name"/>
+            <input type="text" name="name" id="name" value={form.name} onChange={ (evt) => { handleChange(evt) }} placeholder="User Name"/>
             <br/>
-                <input type="text" name="lastname" placeholder="last Name"/>
+                <input type="text" name="lastname" id="lastname" value={form.lastname} onChange={ (evt) => { handleChange(evt) }}  placeholder="last Name"/>
             <br/>
-                <input type="text" name="email" placeholder="E-mail"/>
+                <input type="text" name="email" id="email" value={form.email} onChange={ (evt) => { handleChange(evt) }}  placeholder="E-mail"/>
             <br/>
-                <input classNameName="password" type="password" name="password" placeholder="Password"/>
+                <input classNameName="password" type="password" name="password" id="password" value={form.password} onChange={ (evt) => { handleChange(evt) }}  placeholder="Password"/>
             <br/>
                 <button className="register" type="submit">Create</button>
 			</div>
+			</form>
 		</>
 
 	)

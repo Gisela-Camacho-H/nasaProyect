@@ -3,7 +3,11 @@ import React from 'react'
 export default function Home() {
 	return (
 		<>
-		<br/>
+        <br/><br/>
+		<div className="titlePage">
+            <h1>Welcome</h1>
+        </div>
+        <br/>
         <div className="index1">
             <p>This Web page shows some information and pictures about the space.</p>
             <br/>

@@ -62,7 +62,9 @@ export default function Blog() {
     return (
 		<>
 		<br/>
-		<h1>Sección de comentarios</h1>
+		<div className="titlePage">
+            <h1>Blog</h1>
+        </div>
 
 <form id="commentForm" onSubmit={ (evt) => { handleSubmit(evt) } }>
 	<br/>
@@ -88,14 +90,20 @@ export default function Blog() {
 		<hr/>
 		<br/>
 		<h2>Comments</h2>
+		<br/>
+		<br/>
 
 		<ul>
 			{
 				comments.map((e, index) => {
 					return (
 						<li key={index}>
-							<h3>{e.title}</h3>
-							<p>{e.description}</p>
+							<h3 className="CommentTitle" >{e.title}</h3>
+							<div className="comment">
+								<p className="CommentDescription">{e.description}</p>
+							</div>
+							<br/>
+							<br/>
 						</li>
 					)
 				})
@@ -105,3 +113,4 @@ export default function Blog() {
 	</>
     )
 }
+//							<img className="planetaImg" src={planeta} alt=""/>

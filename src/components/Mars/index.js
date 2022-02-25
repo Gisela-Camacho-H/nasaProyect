@@ -1,29 +1,45 @@
-import React from 'react'
+import React, {useEffect, useContext}  from 'react'
+import NasaContext from '../../context/Nasa/NasaContext';
 
 export default function Mars() {
+
+    const ctxNasa = useContext(NasaContext)
+    const {getMarsPhotos} = ctxNasa
+    useEffect(()=>{
+        getMarsPhotos()
+    },[])
+    console.log(ctxNasa)
+
+
 	return (
 		<>
-			<h1>Mars</h1>
+        <br/><br/>
+		<div className="titlePage">
+            <h1>Picture of Mars</h1>
+        </div>
 			<br/>
-        <div class="container1">
+        <div className="container1">
             <div>
                 <br/>
-                <h3>id</h3>
-                <p id="description1"></p>
-                <h3>date</h3>
-                <p id="date1"></p>
-                <div id="photo1"></div>
+                <p className="dateMars">{ctxNasa.photoMars.photos[10].earth_date}</p>
+                <br/>
+                <div><img className="photoMars" src={ctxNasa.photoMars.photos[10].img_src} alt="Nasa"/></div>
             </div>
             <div>
                 <br/>
-                <h3>id</h3>
-                <p id="description2"></p>
-                <h3>date</h3>
-                <p id="date2"></p>
-                <div id="photo2"></div>
+                <p className="dateMars">{ctxNasa.photoMars.photos[0].earth_date}</p>
+                <br/>
+                <div><img className="photoMars"  src={ctxNasa.photoMars.photos[0].img_src}  alt="Nasa"/></div>
+            </div>
+            <div>
+                <br/>
+                <p className="dateMars">{ctxNasa.photoMars.photos[28].earth_date}</p>
+                <br/>
+                <div><img className="photoMars"  src={ctxNasa.photoMars.photos[28].img_src} alt="Nasa"/></div>
             </div>
         </div>
 		</>
-
 	)
 }
+//{ctxNasa.photoMars.photos[10].earth_date}
+//{ctxNasa.photoMars.photos[10].img_src}
