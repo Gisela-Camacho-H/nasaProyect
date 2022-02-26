@@ -17,10 +17,7 @@ const NasaState = (props) => {
             title: "", 
             url: ""
         }, 
-        photoMars: {
-            earth_date: "", 
-            img_src: "",
-        },
+        photoMars: [],
         selectedPhotoDay:{
             date: "", 
             explanation: "", 
@@ -34,18 +31,23 @@ const NasaState = (props) => {
     const [globalState, dispatch] = useReducer(NasaReducer, initialState)
 
     const getPhotoDay = async() => {
+
             let apiKey = process.env.REACT_APP_APIKEY
-            let response = await axiosClient.get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
+
+            let response = await axiosClient.get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
+
             dispatch({
                 type: "GET_PHOTO_DAY", payload: response.data
             })
-            console.log(response)
+            
         }
 
-    const getSelectedPhotoDay = async() => {
+    const getSelectedPhotoDay = async (date) => {
+        
         let apiKey = process.env.REACT_APP_APIKEY
-        //let date =process.SolarSystem.index.dateDay
-        let response = await axiosClient.get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=2020-01-01`);
+        
+        let response = await axiosClient.get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`);
+        
         dispatch({
             type: "GET_SELECTED_PHOTO_DAY", payload: response.data
         })
@@ -53,13 +55,18 @@ const NasaState = (props) => {
     }
 
     const getMarsPhotos = async() => {
+        
         let apiKey = process.env.REACT_APP_APIKEY
-        //let date =process.SolarSystem.index.dateDay
+        
         let response = await axiosClient.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${apiKey}`);
+
+        const arrMarsPhotos = response.data.photos.splice(0,3)        
+
         dispatch({
-            type: "GET_MARS_PHOTOS", payload: response.data
+            type: "GET_MARS_PHOTOS", 
+            payload: arrMarsPhotos
         })
-        console.log(response)
+
     }
 
 
@@ -67,11 +74,9 @@ const NasaState = (props) => {
         <NasaContext.Provider
         value={{
             photoDay: globalState.photoDay,
-            getPhotoDay
-        ,
+            getPhotoDay,
             selectedPhotoDay: globalState.selectedPhotoDay, 
             getSelectedPhotoDay,
-
             photoMars: globalState.photoMars,
             getMarsPhotos
         }}

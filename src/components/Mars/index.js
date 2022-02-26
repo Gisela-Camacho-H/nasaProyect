@@ -4,12 +4,15 @@ import NasaContext from '../../context/Nasa/NasaContext';
 export default function Mars() {
 
     const ctxNasa = useContext(NasaContext)
-    const {getMarsPhotos} = ctxNasa
+
+    const {
+        photoMars,
+        getMarsPhotos
+    } = ctxNasa
+
     useEffect(()=>{
         getMarsPhotos()
     },[])
-    console.log(ctxNasa)
-
 
 	return (
 		<>
@@ -19,24 +22,24 @@ export default function Mars() {
         </div>
 			<br/>
         <div className="container1">
-            <div>
-                <br/>
-                <p className="dateMars">{ctxNasa.photoMars.photos[10].earth_date}</p>
-                <br/>
-                <div><img className="photoMars" src={ctxNasa.photoMars.photos[10].img_src} alt="Nasa"/></div>
-            </div>
-            <div> 
-                <br/>
-                <p className="dateMars">{ctxNasa.photoMars.photos[0].earth_date}</p>
-                <br/>
-                <div><img className="photoMars"  src={ctxNasa.photoMars.photos[0].img_src} alt="Nasa"/></div>
-            </div>
-            <div>
-                <br/>
-                <p className="dateMars">{ctxNasa.photoMars.photos[28].earth_date}</p>
-                <br/>
-                <div><img className="photoMars"  src={ctxNasa.photoMars.photos[28].img_src} alt="Nasa"/></div>
-            </div>
+
+            {
+                photoMars.map((elt) => {
+                    return (
+                        <div>
+                            <br/>
+                            <p className="dateMars">{elt.earth_date}</p>
+                            <br/>
+                            <figure>
+                                <img className="photoMars" src={elt.img_src} alt="Nasa"/>
+                            </figure>
+                        </div>
+                    )
+                })
+            }
+          
+           
+           
         </div>
 		</>
 	)

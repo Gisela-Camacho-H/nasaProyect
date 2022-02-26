@@ -18,9 +18,7 @@ export default (globalState, action) => {
         case "GET_MARS_PHOTOS":
                 return {
                     ...globalState,
-                    photoMars: {
-                        ...action.payload
-                    }
+                    photoMars: action.payload // [{.......}, {.....}, {.....}]
                 }
         default:
 		return globalState
