@@ -25,11 +25,11 @@ export default function Mars() {
                 <br/>
                 <div><img className="photoMars" src={ctxNasa.photoMars.photos[10].img_src} alt="Nasa"/></div>
             </div>
-            <div>
+            <div> 
                 <br/>
                 <p className="dateMars">{ctxNasa.photoMars.photos[0].earth_date}</p>
                 <br/>
-                <div><img className="photoMars"  src={ctxNasa.photoMars.photos[0].img_src}  alt="Nasa"/></div>
+                <div><img className="photoMars"  src={ctxNasa.photoMars.photos[0].img_src} alt="Nasa"/></div>
             </div>
             <div>
                 <br/>
